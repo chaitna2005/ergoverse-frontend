@@ -1,0 +1,185 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+.login-page{
+  min-height:100vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  background:
+  radial-gradient(circle at top left,#123456,#07111f 50%,#020817);
+
+  position:relative;
+  overflow:hidden;
+}
+
+.login-page::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background-image:
+  linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+
+  background-size:50px 50px;
+}
+
+.login-card{
+
+  width:470px;
+
+  background:rgba(9,17,30,.95);
+
+  border:1px solid rgba(0,212,255,.15);
+
+  border-radius:28px;
+
+  padding:45px;
+
+  z-index:2;
+
+  backdrop-filter:blur(12px);
+
+  box-shadow:
+  0 0 50px rgba(0,212,255,.12);
+}
+
+.logo-section{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.logo-box{
+
+  width:90px;
+  height:90px;
+
+  margin:auto;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  border-radius:22px;
+
+  background:#111f33;
+
+  color:#00d4ff;
+
+  font-size:42px;
+
+  box-shadow:
+  0 0 30px rgba(0,212,255,.3);
+}
+
+.logo-title{
+  margin-top:20px;
+  color:white;
+  font-size:42px;
+  font-weight:800;
+}
+
+.logo-title span{
+  color:#00d4ff;
+}
+
+.logo-subtitle{
+  color:#7f8ea3;
+  margin-top:8px;
+  letter-spacing:3px;
+  font-size:11px;
+}
+
+.form-group{
+  margin-bottom:18px;
+}
+
+.form-group label{
+  display:block;
+  color:#8ea0b7;
+  margin-bottom:8px;
+  font-size:13px;
+}
+
+.form-group input{
+
+  width:100%;
+
+  padding:15px;
+
+  border-radius:12px;
+
+  background:#162236;
+
+  border:1px solid #22324b;
+
+  color:white;
+
+  font-size:15px;
+}
+
+.form-group input:focus{
+  outline:none;
+  border-color:#00d4ff;
+}
+
+.options{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:25px;
+}
+
+.options a{
+  color:#00d4ff;
+  text-decoration:none;
+}
+
+.login-btn{
+
+  width:100%;
+
+  border:none;
+
+  padding:16px;
+
+  border-radius:12px;
+
+  cursor:pointer;
+
+  color:white;
+
+  font-size:15px;
+  font-weight:700;
+
+  background:
+  linear-gradient(
+  90deg,
+  #0078ff,
+  #00d4ff
+  );
+}
+
+.login-btn:hover{
+  transform:translateY(-2px);
+}
+
+.footer-text{
+  margin-top:25px;
+
+  text-align:center;
+
+  color:#718096;
+
+  font-size:12px;
+}
