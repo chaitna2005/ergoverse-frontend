@@ -275,13 +275,16 @@ table tr:hover {
 }
 
 .modal {
-  width: 450px;
+    background: #1e293b;
+    width: 650px;
+    max-width: 90%;
+    max-height: 90vh;
 
-  background: #1e293b;
+    overflow-y: auto;
 
-  padding: 30px;
-
-  border-radius: 16px;
+    border-radius: 12px;
+    padding: 25px;
+    
 }
 
 .modal h2 {
@@ -346,14 +349,17 @@ table tr:hover {
 /* Modal */
 
 .modal-overlay {
-  position: fixed;
-  inset: 0;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
 
-  background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    overflow-y: auto;
+    padding: 20px;
+    z-index: 999;
 }
 
 

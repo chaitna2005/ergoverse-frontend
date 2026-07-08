@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./AdminDashboard.css";
 
 function Workers() {
@@ -120,7 +121,7 @@ function Workers() {
 
     setShowModal(false);
 
-    alert("✅ Worker Created Successfully");
+    toast.success("Worker Created Successfully!");
   };
 
   const handleView = (worker) => {
@@ -150,7 +151,7 @@ function Workers() {
 
     setShowEditModal(false);
 
-    alert("✅ Worker Updated Successfully");
+    toast.info("Worker Updated Successfully!");
 
   };
   const handleDelete = (worker) => {
@@ -169,7 +170,7 @@ function Workers() {
 
     setWorkerToDelete(null);
 
-    alert("🗑 Worker Deleted Successfully");
+    toast.error("Worker Deleted Successfully!");
 
   };
 
