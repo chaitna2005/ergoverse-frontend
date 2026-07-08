@@ -222,9 +222,15 @@ function Workers() {
 
       <ul>
         <li onClick={() => navigate("/admin")}>Dashboard</li>
+
+        <li>Live Monitoring</li>
+
         <li className="active">Workers</li>
+
         <li>Analytics</li>
+
         <li>Reports</li>
+
         <li>Settings</li>
       </ul>
 

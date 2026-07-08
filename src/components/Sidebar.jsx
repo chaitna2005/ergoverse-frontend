@@ -1,16 +1,56 @@
-function Sidebar() {
+import { useNavigate } from "react-router-dom";
+
+function Sidebar({ active }) {
+  const navigate = useNavigate();
+
   return (
     <div className="sidebar">
 
-      <h2>ERGOVERSE</h2>
+      <div className="logo-section">
+        <h2>ERGOVERSE</h2>
+        <p>Workplace Intelligence</p>
+      </div>
 
       <ul>
-        <li>Dashboard</li>
-        <li>Live Monitoring</li>
-        <li>Workers</li>
-        <li>Analytics</li>
-        <li>Reports</li>
-        <li>Settings</li>
+
+        <li
+          className={active === "dashboard" ? "active" : ""}
+          onClick={() => navigate("/admin")}
+        >
+          Dashboard
+        </li>
+
+        <li
+          className={active === "live" ? "active" : ""}
+        >
+          Live Monitoring
+        </li>
+
+        <li
+          className={active === "workers" ? "active" : ""}
+          onClick={() => navigate("/workers")}
+        >
+          Workers
+        </li>
+
+        <li
+          className={active === "analytics" ? "active" : ""}
+        >
+          Analytics
+        </li>
+
+        <li
+          className={active === "reports" ? "active" : ""}
+        >
+          Reports
+        </li>
+
+        <li
+          className={active === "settings" ? "active" : ""}
+        >
+          Settings
+        </li>
+
       </ul>
 
     </div>
