@@ -58,6 +58,9 @@ function Workers() {
   const [departmentFilter, setDepartmentFilter] = useState("All");
   const [riskFilter, setRiskFilter] = useState("All");
   const [statusFilter, setStatusFilter] = useState("All");
+  // Pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const workersPerPage = 5;
 
   // Add Worker Form
   const [formData, setFormData] = useState({
@@ -199,6 +202,13 @@ function Workers() {
       matchesStatus
     );
   });
+  const indexOfLastWorker = currentPage * workersPerPage;
+  const indexOfFirstWorker = indexOfLastWorker - workersPerPage;
+
+  const currentWorkers = filteredWorkers.slice(
+    indexOfFirstWorker,
+    indexOfLastWorker
+  );
   return (
   <div className="layout">
 
@@ -291,7 +301,6 @@ function Workers() {
         </div>
 
       </div>
-
       {/* Workers Table */}
 
       <div className="alerts-section">
@@ -307,15 +316,15 @@ function Workers() {
               <th>Department</th>
               <th>Phone</th>
               <th>Risk</th>
-              <th>Safety Score</th>
               <th>Status</th>
+              <th>Safety Score</th>
               <th>Actions</th>
             </tr>
           </thead>
 
           <tbody>
 
-            {filteredWorkers.map((worker) => (
+            {currentWorkers.map((worker) => (
 
               <tr key={worker.id}>
 
@@ -323,9 +332,20 @@ function Workers() {
                 <td>{worker.name}</td>
                 <td>{worker.department}</td>
                 <td>{worker.phone}</td>
-                <td>{worker.risk}</td>
+
+                <td>
+                  <span className={`risk-badge ${worker.risk.toLowerCase()}`}>
+                    {worker.risk}
+                  </span>
+                </td>
+
+                <td>
+                  <span className={`status-badge ${worker.status.toLowerCase()}`}>
+                    {worker.status}
+                  </span>
+                </td>
+
                 <td>{worker.score}</td>
-                <td>{worker.status}</td>
 
                 <td>
 
@@ -359,6 +379,28 @@ function Workers() {
           </tbody>
 
         </table>
+
+        {/* Pagination */}
+
+        <div className="pagination">
+
+          <button
+            disabled={currentPage === 1}
+            onClick={() => setCurrentPage(currentPage - 1)}
+          >
+            Previous
+          </button>
+
+          <span>Page {currentPage}</span>
+
+          <button
+            disabled={indexOfLastWorker >= filteredWorkers.length}
+            onClick={() => setCurrentPage(currentPage + 1)}
+          >
+            Next
+          </button>
+
+        </div>
 
       </div>
 
@@ -461,7 +503,7 @@ function Workers() {
 
     )}
 
-        {/* View Worker Modal */}
+    {/* View Worker Modal */}
 
     {showViewModal && selectedWorker && (
 
@@ -502,7 +544,7 @@ function Workers() {
 
     )}
 
-        {/* Edit Worker Modal */}
+    {/* Edit Worker Modal */}
 
     {showEditModal && (
 

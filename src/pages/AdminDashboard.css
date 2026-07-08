@@ -533,3 +533,74 @@ td{
 .worker-details strong{
     color:white;
 }
+
+/* Risk Badge */
+.risk-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.risk-badge.high {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.risk-badge.medium {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.risk-badge.low {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-badge.active {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status-badge.inactive {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+}
+
+.pagination button:disabled {
+  background: #64748b;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  color: white;
+  font-weight: 600;
+}
