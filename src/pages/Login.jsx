@@ -96,9 +96,9 @@ function Login() {
           </div>
 
           {error && (
-            <p className="error">
-              {error}
-            </p>
+            <div className="error">
+              ⚠ {error}
+            </div>
           )}
 
           <button
