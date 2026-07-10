@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./AdminDashboard.css";
+import AdminSidebar from "../components/AdminSidebar";
 
 function Workers() {
-  const navigate = useNavigate();
+  
 
   // Modal State
   const [showModal, setShowModal] = useState(false);
@@ -211,30 +211,7 @@ function Workers() {
   );
   return (
   <div className="layout">
-
-    {/* Sidebar */}
-    <div className="sidebar">
-
-      <div className="logo-section">
-        <h2>ERGOVERSE</h2>
-        <p>Workplace Intelligence</p>
-      </div>
-
-      <ul>
-        <li onClick={() => navigate("/admin")}>Dashboard</li>
-
-        <li>Live Monitoring</li>
-
-        <li className="active">Workers</li>
-
-        <li>Analytics</li>
-
-        <li>Reports</li>
-
-        <li>Settings</li>
-      </ul>
-
-    </div>
+    <AdminSidebar active="workers" />
 
     {/* Main Content */}
     <div className="main-content">

@@ -1,21 +1,25 @@
 import { Routes, Route } from "react-router-dom";
-import Workers from "./pages/Workers";
 
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import AdminDashboard from "./pages/AdminDashboard";
 import WorkerDashboard from "./pages/WorkerDashboard";
+import Workers from "./pages/Workers";
+import Analytics from "./pages/Analytics";
+
 import ProtectedRoute from "./routes/ProtectedRoute";
 
 function App() {
   return (
     <Routes>
+      {/* Public Routes */}
       <Route path="/" element={<Login />} />
       <Route path="/login" element={<Login />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password" element={<ResetPassword />} />
 
+      {/* Admin Dashboard */}
       <Route
         path="/admin"
         element={
@@ -25,6 +29,7 @@ function App() {
         }
       />
 
+      {/* Workers */}
       <Route
         path="/workers"
         element={
@@ -34,6 +39,17 @@ function App() {
         }
       />
 
+      {/* Analytics */}
+      <Route
+        path="/admin/analytics"
+        element={
+          <ProtectedRoute>
+            <Analytics />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Worker Dashboard */}
       <Route
         path="/worker"
         element={

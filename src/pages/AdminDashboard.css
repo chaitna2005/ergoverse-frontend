@@ -15,17 +15,21 @@
 
 .sidebar {
   width: 260px;
+  min-width: 260px;
+  height: 100vh;
   background: #111827;
   border-right: 1px solid #1f2937;
 
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 
   padding: 25px;
 }
 
 .logo-section {
   padding-left: 5px;
+  margin-bottom: 20px;
 }
 
 .logo-section h2 {
@@ -42,7 +46,8 @@
 
 .sidebar ul {
   list-style: none;
-  margin-top: 25px;
+  margin: 0;
+  padding: 0;
 }
 
 .sidebar-footer {
@@ -88,10 +93,10 @@
 
 /* Main Content */
 
-.main-content {
-  flex: 1;
-  padding: 30px;
-  overflow-x: auto;
+.main-content{
+    flex:1;
+    padding:30px;
+    overflow-x:hidden;
 }
 
 /* Header */
@@ -232,12 +237,12 @@
     background:#1e293b;
     padding:25px;
     border-radius:16px;
+    width:100%;
     overflow-x:auto;
 }
 
 table{
     width:100%;
-    min-width:1200px;
     border-collapse:collapse;
 }
 
@@ -603,4 +608,24 @@ td{
 .pagination span {
   color: white;
   font-weight: 600;
+}
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.analytics-card {
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 320px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.analytics-card h3 {
+    color: white;
+    margin-bottom: 20px;
 }

@@ -1,7 +1,13 @@
 import { useNavigate } from "react-router-dom";
+import { logout } from "../services/authService";
 
-function Sidebar({ active }) {
+function AdminSidebar({ active }) {
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
 
   return (
     <div className="sidebar">
@@ -18,9 +24,7 @@ function Sidebar({ active }) {
           Dashboard
         </li>
 
-        <li
-          className={active === "live" ? "active" : ""}
-        >
+        <li className={active === "live" ? "active" : ""}>
           Live Monitoring
         </li>
 
@@ -38,20 +42,30 @@ function Sidebar({ active }) {
           Analytics
         </li>
 
-        <li
-          className={active === "reports" ? "active" : ""}
-        >
+        <li className={active === "reports" ? "active" : ""}>
           Reports
         </li>
 
-        <li
-          className={active === "settings" ? "active" : ""}
-        >
+        <li className={active === "settings" ? "active" : ""}>
           Settings
         </li>
       </ul>
+
+      <div className="sidebar-footer">
+        <div>
+          <h4>Admin User</h4>
+          <p>Administrator</p>
+        </div>
+
+        <button
+          className="sidebar-logout"
+          onClick={handleLogout}
+        >
+          Logout
+        </button>
+      </div>
     </div>
   );
 }
 
-export default Sidebar;
+export default AdminSidebar;

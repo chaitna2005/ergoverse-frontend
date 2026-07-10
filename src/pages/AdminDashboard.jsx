@@ -1,63 +1,12 @@
-import { useNavigate } from "react-router-dom";
-import { logout } from "../services/authService";
+import AdminSidebar from "../components/AdminSidebar";
 import "./AdminDashboard.css";
 
 function AdminDashboard() {
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    logout();
-    navigate("/login");
-  };
-
   return (
     <div className="layout">
 
       {/* Sidebar */}
-      <div className="sidebar">
-
-        <div>
-
-          <div className="logo-section">
-            <h2>ERGOVERSE</h2>
-            <p>Workplace Intelligence</p>
-          </div>
-
-          <ul>
-            <li className="active">Dashboard</li>
-
-            <li>Live Monitoring</li>
-
-            <li onClick={() => navigate("/workers")}>
-              Workers
-            </li>
-
-            <li>Analytics</li>
-
-            <li>Reports</li>
-
-            <li>Settings</li>
-          </ul>
-
-        </div>
-
-        <div className="sidebar-footer">
-
-          <div>
-            <h4>Admin User</h4>
-            <p>Administrator</p>
-          </div>
-
-          <button
-            className="sidebar-logout"
-            onClick={handleLogout}
-          >
-            Logout
-          </button>
-
-        </div>
-
-      </div>
+      <AdminSidebar active="dashboard" />
 
       {/* Main Content */}
       <div className="main-content">
@@ -105,13 +54,11 @@ function AdminDashboard() {
         <div className="middle-section">
 
           <div className="chart-card">
-
             <h2>Posture Risk Trend</h2>
 
             <div className="chart-placeholder">
               Chart will come here
             </div>
-
           </div>
 
           <div className="alert-card">
