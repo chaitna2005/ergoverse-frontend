@@ -1,0 +1,76 @@
+/* ---------- Filters ---------- */
+
+.analytics-filters {
+  display: flex;
+  gap: 16px;
+  margin: 24px 0 30px;
+  flex-wrap: wrap;
+}
+
+.analytics-filters select {
+  min-width: 200px;
+  padding: 10px 14px;
+  background: #1e293b;
+  color: #ffffff;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.analytics-filters select:hover {
+  border-color: #3b82f6;
+}
+
+.analytics-filters select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* ---------- Charts Grid ---------- */
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* ---------- Chart Cards ---------- */
+
+.analytics-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 20px;
+  min-height: 320px;
+}
+
+.analytics-card h3 {
+  color: #f8fafc;
+  margin-bottom: 18px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-filters {
+    flex-direction: column;
+  }
+
+  .analytics-filters select {
+    width: 100%;
+  }
+
+}
+.analytics-card .recharts-responsive-container {
+  margin-top: 10px;
+}

@@ -8,6 +8,11 @@ import WorkerDashboard from "./pages/WorkerDashboard";
 import Workers from "./pages/Workers";
 import Analytics from "./pages/Analytics";
 import LiveMonitoring from "./pages/LiveMonitoring";
+import Reports from "./pages/Reports";
+import Settings from "./pages/Settings";
+import WorkerReports from "./pages/WorkerReports";
+import WorkerProtectedRoute from "./routes/WorkerProtectedRoute";
+
 
 import ProtectedRoute from "./routes/ProtectedRoute";
 
@@ -60,6 +65,25 @@ function App() {
         }
       />
 
+       {/* Reports */}
+       <Route
+          path="/admin/reports"
+          element={
+            <ProtectedRoute>
+              <Reports />
+            </ProtectedRoute>
+          }
+        />
+        {/* Settings */}
+        <Route
+          path="/admin/settings"
+          element={
+            <ProtectedRoute>
+              <Settings />
+            </ProtectedRoute>
+          }
+        />
+
       {/* Worker Dashboard */}
       <Route
         path="/worker"
@@ -67,6 +91,15 @@ function App() {
           <ProtectedRoute>
             <WorkerDashboard />
           </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/worker/reports"
+        element={
+          <WorkerProtectedRoute>
+            <WorkerReports />
+          </WorkerProtectedRoute>
         }
       />
     </Routes>

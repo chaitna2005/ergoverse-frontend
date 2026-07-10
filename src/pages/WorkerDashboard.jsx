@@ -1,58 +1,12 @@
-import { useNavigate } from "react-router-dom";
+import WorkerSidebar from "../components/WorkerSidebar";
 import "./WorkerDashboard.css";
 
-
 function WorkerDashboard() {
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    localStorage.removeItem("role");
-    navigate("/login");
-  };
-
   return (
     <div className="dashboard-layout">
 
       {/* Sidebar */}
-      <div className="sidebar">
-
-        <div>
-
-          <div className="logo">
-            <h2>ERGOVERSE</h2>
-            <p>Workplace Intelligence</p>
-          </div>
-
-          <ul className="menu">
-            <li className="active">Dashboard</li>
-            <li>My Reports</li>
-            <li>Alerts</li>
-            <li>My Activity</li>
-            <li>Safety Tips</li>
-            <li>Profile</li>
-            <li>Settings</li>
-          </ul>
-
-        </div>
-
-        {/* Worker Info + Logout */}
-        <div className="sidebar-footer">
-
-          <div>
-            <h4>Worker User</h4>
-            <p>Production Worker</p>
-          </div>
-
-          <button
-            className="sidebar-logout"
-            onClick={handleLogout}
-          >
-            Logout
-          </button>
-
-        </div>
-
-      </div>
+      <WorkerSidebar active="dashboard" />
 
       {/* Main Content */}
       <div className="worker-dashboard">
@@ -99,13 +53,11 @@ function WorkerDashboard() {
         <div className="content-grid">
 
           <div className="chart-box">
-
             <h2>Safety Score Trend</h2>
 
             <div className="chart-placeholder">
               Chart will come here
             </div>
-
           </div>
 
           <div className="alert-box">

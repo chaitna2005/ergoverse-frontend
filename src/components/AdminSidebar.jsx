@@ -45,12 +45,18 @@ function AdminSidebar({ active }) {
           Analytics
         </li>
 
-        <li className={active === "reports" ? "active" : ""}>
+        <li
+          className={active === "reports" ? "active" : ""}
+          onClick={() => navigate("/admin/reports")}
+        >
           Reports
         </li>
 
-        <li className={active === "settings" ? "active" : ""}>
-          Settings
+        <li
+          className={active === "settings" ? "active" : ""}
+          onClick={() => navigate("/admin/settings")}
+        >
+         Settings
         </li>
       </ul>
 
