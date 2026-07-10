@@ -7,6 +7,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import WorkerDashboard from "./pages/WorkerDashboard";
 import Workers from "./pages/Workers";
 import Analytics from "./pages/Analytics";
+import LiveMonitoring from "./pages/LiveMonitoring";
 
 import ProtectedRoute from "./routes/ProtectedRoute";
 
@@ -25,6 +26,16 @@ function App() {
         element={
           <ProtectedRoute>
             <AdminDashboard />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Live Monitoring */}
+      <Route
+        path="/admin/live-monitoring"
+        element={
+          <ProtectedRoute>
+            <LiveMonitoring />
           </ProtectedRoute>
         }
       />

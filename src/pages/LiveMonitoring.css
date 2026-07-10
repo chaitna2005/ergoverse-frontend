@@ -1,0 +1,166 @@
+/* ===========================
+   Main Layout
+=========================== */
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: #0f172a;
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  overflow-x: hidden;
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.live-header {
+  margin-bottom: 30px;
+}
+
+.live-header h1 {
+  font-size: 36px;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.live-header p {
+  color: #94a3b8;
+  font-size: 16px;
+}
+
+/* ===========================
+   Top Grid
+=========================== */
+
+.live-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+/* ===========================
+   Cards
+=========================== */
+
+.camera-card,
+.worker-card,
+.alerts-card,
+.recommendation-card {
+  background: #1e293b;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.camera-card h2,
+.worker-card h2,
+.alerts-card h2,
+.recommendation-card h2 {
+  margin-bottom: 20px;
+  color: white;
+}
+
+/* ===========================
+   Camera Placeholder
+=========================== */
+
+.camera-placeholder {
+  height: 420px;
+  border: 2px dashed #475569;
+  border-radius: 14px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: #94a3b8;
+  font-size: 18px;
+}
+
+.camera-placeholder p {
+  margin-top: 15px;
+}
+
+/* ===========================
+   Worker Details
+=========================== */
+
+.worker-info {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.worker-info p {
+  color: #e2e8f0;
+  font-size: 15px;
+}
+
+.worker-info strong {
+  color: white;
+}
+
+/* ===========================
+   Bottom Grid
+=========================== */
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+/* ===========================
+   Alerts
+=========================== */
+
+.alert-item {
+  background: #0f172a;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+/* ===========================
+   Recommendations
+=========================== */
+
+.recommendation-card ul {
+  padding-left: 20px;
+}
+
+.recommendation-card li {
+  margin-bottom: 15px;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 992px) {
+
+  .live-grid,
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .camera-placeholder {
+    height: 300px;
+  }
+}
+.camera-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}

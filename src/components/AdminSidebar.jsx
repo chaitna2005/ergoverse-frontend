@@ -24,7 +24,10 @@ function AdminSidebar({ active }) {
           Dashboard
         </li>
 
-        <li className={active === "live" ? "active" : ""}>
+        <li
+         className={active === "live" ? "active" : ""}
+         onClick={() => navigate("/admin/live-monitoring")}
+       >
           Live Monitoring
         </li>
 
